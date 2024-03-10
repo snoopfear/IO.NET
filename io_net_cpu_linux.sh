@@ -30,14 +30,17 @@ sudo apt install -y curl
 curl -L https://github.com/ionet-official/io-net-official-setup-script/raw/main/ionet-setup.sh -o ionet-setup.sh
 
 # Проверяем успешность установки прав на файл и запускаем скрипт
-if chmod +x ionet-setup.sh && ./ionet-setup.sh; then
-    # Загружаем и устанавливаем исполняемый файл launch_binary_linux
-    curl -L https://github.com/ionet-official/io_launch_binaries/raw/main/launch_binary_linux -o launch_binary_linux
-    chmod +x launch_binary_linux
-else
-    echo "Failed to set up ionet-setup.sh"
-    exit 1
-fi
+if chmod +x ionet-setup.sh
+
+# Запускаем ionet-setup.sh в фоновом режиме и ожидаем его завершения
+./ionet-setup.sh &
+
+# Ожидаем завершения выполнения ionet-setup.sh
+wait
+
+curl -L https://github.com/ionet-official/io_launch_binaries/raw/main/launch_binary_linux -o launch_binary_linux
+
+chmod +x launch_binary_linux
 
 echo "============================================================"
 echo "Run the command from your cloud console to connect device"
