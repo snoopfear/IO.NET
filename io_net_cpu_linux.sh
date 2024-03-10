@@ -1,8 +1,5 @@
 #!/bin/bash
 
-while true
-do
-
 #Logo
 # Этот скрипт предназначен для установки и запуска IO.NET
 echo "=============================================================="
@@ -40,4 +37,4 @@ chmod +x launch_binary_linux
 
 # Запускаем launch_binary_linux с нужными параметрами, подставив значение переменной $NODENAME
 ./launch_binary_linux --device_id=044b39b8-6bc8-42f0-ad7d-5f33c504f549 --user_id=820cb56b-3d52-4099-a359-bfd8de33c5ca --operating_system="Linux" --usegpus=false --device_name=$NODENAME
-done
+docker ps
