@@ -30,10 +30,7 @@ sudo apt install -y curl
 curl -L https://github.com/ionet-official/io-net-official-setup-script/raw/main/ionet-setup.sh -o ionet-setup.sh
 
 # Проверяем успешность установки прав на файл и запускаем скрипт
-chmod +x ionet-setup.sh
-
-# Запускаем ionet-setup.sh в фоновом режиме и ожидаем его завершения
-./ionet-setup.sh &
+chmod +x ionet-setup.sh && ./ionet-setup.sh
 
 # Ожидаем завершения выполнения ionet-setup.sh
 wait
