@@ -15,12 +15,6 @@ echo "=============================================================="
 echo "        Welcome to IO.NET CPU Worker setup for Linux"
 echo "============================================================"
 
-echo "============================================================"
-echo "Write the name of your node:"
-echo "============================================================"
-read NODENAME
-echo 'export NODENAME='$NODENAME >> $HOME/.bash_profile
-source ~/.bash_profile
 
 # Устанавливаем curl, если его еще нет
 sudo apt update
